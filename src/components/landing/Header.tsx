@@ -23,14 +23,13 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-12 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-sm shadow-lg py-3"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
         <a href="#inicio" className="flex items-center">
           <img
             src={logo}
@@ -41,7 +40,6 @@ const Header = () => {
           />
         </a>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -59,7 +57,7 @@ const Header = () => {
             className="bg-green-600 hover:bg-green-700 text-primary-foreground"
           >
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5598988877011"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -68,7 +66,6 @@ const Header = () => {
           </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -82,7 +79,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background shadow-lg">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
@@ -101,7 +97,7 @@ const Header = () => {
               className="bg-green-600 hover:bg-green-700 text-primary-foreground w-full"
             >
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5598988877011"
                 target="_blank"
                 rel="noopener noreferrer"
               >
