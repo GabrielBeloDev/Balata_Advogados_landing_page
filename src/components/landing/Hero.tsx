@@ -50,8 +50,7 @@ const Hero = () => {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6"
+              className="bg-brand-gray text-primary hover:bg-white text-lg px-8 py-6 font-semibold"
             >
               <a href="tel:+5511999999999" className="flex items-center gap-2">
                 <Phone size={24} />
