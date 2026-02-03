@@ -17,7 +17,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { MessageCircle, Send } from "lucide-react";
+import { Send } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const caseTypes = [
   "Crimes de Violência Doméstica",
@@ -41,7 +42,6 @@ const ContactModal = ({ open, onOpenChange, preSelectedCase }: ContactModalProps
   const [tipoCaso, setTipoCaso] = useState(preSelectedCase || "");
   const [descricao, setDescricao] = useState("");
 
-  // Atualiza o tipo de caso quando preSelectedCase muda
   useEffect(() => {
     if (preSelectedCase) {
       setTipoCaso(preSelectedCase);
@@ -66,7 +66,6 @@ const ContactModal = ({ open, onOpenChange, preSelectedCase }: ContactModalProps
     const whatsappUrl = `https://wa.me/5598988877011?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, "_blank");
 
-    // Reset form
     setNome("");
     setTelefone("");
     setTipoCaso("");
@@ -152,7 +151,7 @@ const ContactModal = ({ open, onOpenChange, preSelectedCase }: ContactModalProps
             type="submit"
             className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all rounded-xl"
           >
-            <MessageCircle className="mr-2 w-5 h-5 sm:w-6 sm:h-6" />
+            <WhatsAppIcon className="mr-2 w-5 h-5 sm:w-6 sm:h-6" />
             Enviar pelo WhatsApp
             <Send className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
           </Button>

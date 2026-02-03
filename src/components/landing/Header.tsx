@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -60,7 +61,9 @@ const Header = () => {
               href="https://wa.me/5598988877011"
               target="_blank"
               rel="noopener noreferrer"
+              className="flex items-center gap-2"
             >
+              <WhatsAppIcon className="w-4 h-4" />
               Fale Conosco
             </a>
           </Button>
@@ -100,7 +103,9 @@ const Header = () => {
                 href="https://wa.me/5598988877011"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
               >
+                <WhatsAppIcon className="w-4 h-4" />
                 Fale Conosco
               </a>
             </Button>

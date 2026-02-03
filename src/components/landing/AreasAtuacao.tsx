@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShieldAlert, Pill, Package, Landmark, Monitor, Vote, MessageCircle } from "lucide-react";
+import { ShieldAlert, Pill, Package, Landmark, Monitor, Vote } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import ContactModal from "./ContactModal";
 
 const areas = [
@@ -73,7 +74,6 @@ const AreasAtuacao = () => {
           </p>
         </div>
 
-        {/* Grid responsivo: 2 colunas no mobile, 2 no tablet, 3 no desktop */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
           {areas.map((area, index) => (
             <Card
@@ -101,7 +101,6 @@ const AreasAtuacao = () => {
           ))}
         </div>
 
-        {/* Botão com gradiente laranja/vermelho */}
         <div className="text-center px-2">
           <Button
             size="lg"
@@ -111,7 +110,7 @@ const AreasAtuacao = () => {
               setModalOpen(true);
             }}
           >
-            <MessageCircle className="mr-2 w-5 h-5 sm:w-6 sm:h-6" />
+            <WhatsAppIcon className="mr-2 w-5 h-5 sm:w-6 sm:h-6" />
             <span className="sm:hidden">Fale conosco agora</span>
             <span className="hidden sm:inline">Conte seu caso - Fale conosco agora</span>
           </Button>

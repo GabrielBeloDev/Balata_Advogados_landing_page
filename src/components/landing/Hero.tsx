@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -42,7 +43,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 Fale pelo WhatsApp
               </a>
             </Button>
