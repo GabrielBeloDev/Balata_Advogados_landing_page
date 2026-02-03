@@ -110,11 +110,8 @@ const Contato = () => {
               <p className="text-primary-foreground/90 mb-1 text-sm sm:text-base">
                 Estamos prontos para te atender a qualquer momento,
               </p>
-              <p className="text-primary-foreground/90 mb-1 text-sm sm:text-base font-semibold">
+              <p className="text-primary-foreground/90 mb-4 text-sm sm:text-base font-semibold">
                 em todo o Brasil — online ou presencial.
-              </p>
-              <p className="text-primary-foreground/70 mb-4 sm:mb-6 text-xs sm:text-sm italic">
-                Seu caso não espera, e nós também não.
               </p>
               <Button
                 asChild
