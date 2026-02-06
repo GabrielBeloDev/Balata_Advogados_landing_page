@@ -2,6 +2,10 @@
 
 Landing page institucional do escritório **Balata Advogados**, especializado em Direito Criminal.
 
+## Aviso
+
+Este repositório apresenta uma **landing page profissional** (estrutura, UI, performance e fluxo de contato) e, ao mesmo tempo, foi usado como **projeto educativo** para testar na prática um conjunto de IAs/skills aplicadas ao desenvolvimento frontend.
+
 ## Sobre o Projeto
 
 Site desenvolvido para captação de clientes com foco em atendimento urgente. Inclui:
