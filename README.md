@@ -14,11 +14,12 @@ Site desenvolvido para captação de clientes com foco em atendimento urgente. I
 
 ## Especialidades
 
+- Crimes contra Administração Pública
 - Crimes de Violência Doméstica
 - Tráfico de Drogas
-- Roubo e Furto
-- Crimes contra Administração Pública
-- Crimes Cibernéticos
+- Crimes contra o Patrimônio (Roubo e Furto)
+- Crimes contra a Vida (Tribunal do Júri)
+- Crimes Ambientais
 - Crimes Eleitorais
 
 ## Tecnologias
@@ -86,6 +87,7 @@ src/
 ## Contato
 
 **Balata Advogados**
+
 - WhatsApp: (98) 98887-7011
 - Instagram: [@balata.advogados](https://instagram.com/balata.advogados)
 - OAB/MA 4.913

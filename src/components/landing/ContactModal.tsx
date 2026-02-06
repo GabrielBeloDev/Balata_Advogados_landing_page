@@ -21,11 +21,12 @@ import { Send } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const caseTypes = [
+  "Crimes contra Administração Pública",
   "Crimes de Violência Doméstica",
   "Tráfico de Drogas",
-  "Roubo/Furto",
-  "Crimes contra Administração Pública",
-  "Crimes Cibernéticos",
+  "Crimes contra o Patrimônio (Roubo/Furto)",
+  "Crimes contra a Vida (Tribunal do Júri)",
+  "Crimes Ambientais",
   "Crimes Eleitorais",
   "Outro",
 ];

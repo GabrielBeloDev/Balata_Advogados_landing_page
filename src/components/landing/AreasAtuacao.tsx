@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShieldAlert, Pill, Package, Landmark, Monitor, Vote } from "lucide-react";
+import { ShieldAlert, Pill, Package, Landmark, TreeDeciduous, Scale, Vote } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import ContactModal from "./ContactModal";
 
 const areas = [
+  {
+    icon: Landmark,
+    title: "Crimes contra Adm. Pública",
+    description:
+      "Defesa em peculato, corrupção e crimes funcionais.",
+  },
   {
     icon: ShieldAlert,
     title: "Violência Doméstica",
@@ -20,21 +26,21 @@ const areas = [
   },
   {
     icon: Package,
-    title: "Roubo e Furto",
+    title: "Crimes contra o Patrimônio",
     description:
-      "Defesa em crimes contra o patrimônio e receptação.",
+      "Defesa em casos de roubo, furto e receptação.",
   },
   {
-    icon: Landmark,
-    title: "Crimes contra Adm. Pública",
+    icon: Scale,
+    title: "Crimes contra a Vida",
     description:
-      "Defesa em peculato, corrupção e crimes funcionais.",
+      "Atuação no Tribunal do Júri em homicídios e tentativas.",
   },
   {
-    icon: Monitor,
-    title: "Crimes Cibernéticos",
+    icon: TreeDeciduous,
+    title: "Crimes Ambientais",
     description:
-      "Atuação em crimes digitais e fraudes eletrônicas.",
+      "Defesa em crimes contra o meio ambiente e fauna.",
   },
   {
     icon: Vote,
@@ -50,11 +56,12 @@ const AreasAtuacao = () => {
 
   const handleCardClick = (areaTitle: string) => {
     const caseTypeMap: Record<string, string> = {
+      "Crimes contra Adm. Pública": "Crimes contra Administração Pública",
       "Violência Doméstica": "Crimes de Violência Doméstica",
       "Tráfico de Drogas": "Tráfico de Drogas",
-      "Roubo e Furto": "Roubo/Furto",
-      "Crimes contra Adm. Pública": "Crimes contra Administração Pública",
-      "Crimes Cibernéticos": "Crimes Cibernéticos",
+      "Crimes contra o Patrimônio": "Crimes contra o Patrimônio (Roubo/Furto)",
+      "Crimes contra a Vida": "Crimes contra a Vida (Tribunal do Júri)",
+      "Crimes Ambientais": "Crimes Ambientais",
       "Crimes Eleitorais": "Crimes Eleitorais",
     };
     setSelectedCase(caseTypeMap[areaTitle] || "");
@@ -74,11 +81,11 @@ const AreasAtuacao = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
           {areas.map((area, index) => (
             <Card
               key={area.title}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 bg-card border-none cursor-pointer"
+              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 bg-card border-none cursor-pointer w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)]"
               style={{
                 animationDelay: `${index * 0.1}s`,
               }}

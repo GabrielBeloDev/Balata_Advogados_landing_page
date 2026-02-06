@@ -28,7 +28,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Endereço",
-    content: "Ed. São Luís Offices, Sala 209 - São Luís/MA",
+    content: "Ed. São Luís Offices, Sala 209 - Areinha, São Luís/MA",
     link: "https://maps.app.goo.gl/cDSNhpjZk3ay9kAj6",
     color: "purple",
   },
