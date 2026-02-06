@@ -63,6 +63,27 @@ npm run build
 
 Os arquivos serão gerados na pasta `dist/`
 
+### Testes e Qualidade
+
+```bash
+# Rodar os testes uma vez
+npm run test
+
+# Rodar testes em modo watch
+npm run test:watch
+
+# Rodar análise estática (ESLint)
+npm run lint
+```
+
+### Checklist antes de subir para produção
+
+```bash
+npm run lint
+npm run test
+npm run build
+```
+
 ## Estrutura do Projeto
 
 ```
