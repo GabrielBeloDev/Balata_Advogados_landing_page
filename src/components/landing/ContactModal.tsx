@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/select";
 import { Send } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import { toast } from "@/components/ui/use-toast";
+import { getWhatsAppUrl } from "@/config/site";
 
 const caseTypes = [
   "Crimes contra Administração Pública",
@@ -52,20 +54,39 @@ const ContactModal = ({ open, onOpenChange, preSelectedCase }: ContactModalProps
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!nome || !telefone) {
-      alert("Por favor, preencha nome e telefone.");
+    const nomeTrimmed = nome.trim();
+    const telefoneTrimmed = telefone.trim();
+    const telefoneDigits = telefoneTrimmed.replace(/\D/g, "");
+
+    if (!nomeTrimmed || !telefoneTrimmed) {
+      toast({
+        title: "Dados incompletos",
+        description: "Preencha nome e telefone para enviar sua solicitação.",
+      });
+      return;
+    }
+
+    if (telefoneDigits.length < 10) {
+      toast({
+        title: "Telefone inválido",
+        description: "Informe um telefone válido com DDD.",
+      });
       return;
     }
 
     const mensagem = `*Novo contato via site*
 
-*Nome:* ${nome}
-*Telefone:* ${telefone}
+*Nome:* ${nomeTrimmed}
+*Telefone:* ${telefoneTrimmed}
 *Tipo de caso:* ${tipoCaso || "Não informado"}
 *Descrição:* ${descricao || "Não informada"}`;
 
-    const whatsappUrl = `https://wa.me/5598988877011?text=${encodeURIComponent(mensagem)}`;
-    window.open(whatsappUrl, "_blank");
+    const whatsappUrl = getWhatsAppUrl(mensagem);
+    const openedWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    if (!openedWindow) {
+      window.open(whatsappUrl, "_self");
+    }
 
     setNome("");
     setTelefone("");
@@ -97,6 +118,7 @@ const ContactModal = ({ open, onOpenChange, preSelectedCase }: ContactModalProps
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               required
+              autoComplete="name"
               className="bg-white/95 border-white/50 focus:border-white text-gray-900 placeholder:text-gray-500 h-10 sm:h-11"
             />
           </div>
@@ -112,6 +134,7 @@ const ContactModal = ({ open, onOpenChange, preSelectedCase }: ContactModalProps
               value={telefone}
               onChange={(e) => setTelefone(e.target.value)}
               required
+              autoComplete="tel"
               className="bg-white/95 border-white/50 focus:border-white text-gray-900 placeholder:text-gray-500 h-10 sm:h-11"
             />
           </div>

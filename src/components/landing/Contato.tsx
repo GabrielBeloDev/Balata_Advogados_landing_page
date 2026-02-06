@@ -2,34 +2,42 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import {
+  EMAIL,
+  MAPS_URL,
+  PHONE_DISPLAY,
+  PHONE_E164,
+  WHATSAPP_MESSAGES,
+  getWhatsAppUrl,
+} from "@/config/site";
 
 const contactInfo = [
   {
     icon: Phone,
     title: "Telefone",
-    content: "(98) 98887-7011",
-    link: "tel:+5598988877011",
+    content: PHONE_DISPLAY,
+    link: `tel:${PHONE_E164}`,
     color: "blue",
   },
   {
     icon: WhatsAppIcon,
     title: "WhatsApp",
-    content: "(98) 98887-7011",
-    link: "https://wa.me/5598988877011",
+    content: PHONE_DISPLAY,
+    link: getWhatsAppUrl(),
     color: "green",
   },
   {
     icon: Mail,
     title: "E-mail",
-    content: "contato@balataadvogados.com.br",
-    link: "mailto:contato@balataadvogados.com.br",
+    content: EMAIL,
+    link: `mailto:${EMAIL}`,
     color: "orange",
   },
   {
     icon: MapPin,
     title: "Endereço",
     content: "Ed. São Luís Offices, Sala 209 - Areinha, São Luís/MA",
-    link: "https://maps.app.goo.gl/cDSNhpjZk3ay9kAj6",
+    link: MAPS_URL,
     color: "purple",
   },
 ];
@@ -81,6 +89,7 @@ const Contato = () => {
                 target={info.link.startsWith("http") ? "_blank" : undefined}
                 rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="block"
+                aria-label={`Abrir ${info.title}`}
               >
                 <Card className={`h-full hover:shadow-lg transition-shadow duration-300 bg-card border ${colors.border}`}>
                   <CardContent className="p-3 sm:p-4 md:p-6 text-center">
@@ -119,10 +128,11 @@ const Contato = () => {
                 className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-primary-foreground text-sm sm:text-base"
               >
                 <a
-                  href="https://wa.me/5598988877011?text=Olá! Gostaria de agendar uma consulta."
+                  href={getWhatsAppUrl(WHATSAPP_MESSAGES.consultation)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
+                  aria-label="Agendar consulta pelo WhatsApp"
                 >
                   <WhatsAppIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                   Fale Agora

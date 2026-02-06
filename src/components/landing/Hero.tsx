@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import heroBg from "@/assets/hero-bg.jpg";
+import {
+  PHONE_DISPLAY,
+  PHONE_E164,
+  WHATSAPP_MESSAGES,
+  getWhatsAppUrl,
+} from "@/config/site";
 
 const Hero = () => {
   return (
@@ -38,10 +44,11 @@ const Hero = () => {
               className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-primary-foreground text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6"
             >
               <a
-                href="https://wa.me/5598988877011?text=Olá! Gostaria de agendar uma consulta."
+                href={getWhatsAppUrl(WHATSAPP_MESSAGES.consultation)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
+                aria-label="Falar pelo WhatsApp"
               >
                 <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 Fale pelo WhatsApp
@@ -53,9 +60,13 @@ const Hero = () => {
               size="lg"
               className="w-full sm:w-auto bg-brand-gray text-primary hover:bg-white text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 font-semibold"
             >
-              <a href="tel:+5598988877011" className="flex items-center justify-center gap-2">
+              <a
+                href={`tel:${PHONE_E164}`}
+                className="flex items-center justify-center gap-2"
+                aria-label="Ligar para Balata Advogados"
+              >
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
-                (98) 98887-7011
+                {PHONE_DISPLAY}
               </a>
             </Button>
           </div>

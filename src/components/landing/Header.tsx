@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import logo from "@/assets/logo.png";
+import { WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/site";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,10 +59,11 @@ const Header = () => {
             className="bg-green-600 hover:bg-green-700 text-primary-foreground"
           >
             <a
-              href="https://wa.me/5598988877011"
+              href={getWhatsAppUrl(WHATSAPP_MESSAGES.consultation)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
+              aria-label="Falar com Balata Advogados pelo WhatsApp"
             >
               <WhatsAppIcon className="w-4 h-4" />
               Fale Conosco
@@ -72,7 +74,9 @@ const Header = () => {
         <button
           className="md:hidden p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? "Fechar menu principal" : "Abrir menu principal"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-main-menu"
         >
           {isMobileMenuOpen ? (
             <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
@@ -83,7 +87,7 @@ const Header = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background shadow-lg">
+        <div id="mobile-main-menu" className="md:hidden bg-background shadow-lg">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -100,10 +104,11 @@ const Header = () => {
               className="bg-green-600 hover:bg-green-700 text-primary-foreground w-full"
             >
               <a
-                href="https://wa.me/5598988877011"
+                href={getWhatsAppUrl(WHATSAPP_MESSAGES.consultation)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
+                aria-label="Falar com Balata Advogados pelo WhatsApp"
               >
                 <WhatsAppIcon className="w-4 h-4" />
                 Fale Conosco
