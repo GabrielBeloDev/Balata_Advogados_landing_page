@@ -7,7 +7,7 @@ Landing page institucional do escritório **Balata Advogados**, especializado em
 Site desenvolvido para captação de clientes com foco em atendimento urgente. Inclui:
 
 - Banner de urgência com link direto para WhatsApp
-- Seção de especialidades criminais (6 áreas)
+- Seção de especialidades criminais (7 áreas)
 - Modal de contato com formulário
 - Informações de contato e localização
 - Design responsivo (mobile, tablet e desktop)
