@@ -37,7 +37,7 @@ const Header = () => {
             src={logo}
             alt="Balata Advogados"
             className={`transition-all duration-300 ${
-              isScrolled ? "h-12" : "h-16"
+              isScrolled ? "h-24" : "h-28"
             }`}
           />
         </a>
@@ -74,20 +74,35 @@ const Header = () => {
         <button
           className="md:hidden p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Fechar menu principal" : "Abrir menu principal"}
+          aria-label={
+            isMobileMenuOpen ? "Fechar menu principal" : "Abrir menu principal"
+          }
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-main-menu"
         >
           {isMobileMenuOpen ? (
-            <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
+            <X
+              className={
+                isScrolled ? "text-foreground" : "text-primary-foreground"
+              }
+              size={24}
+            />
           ) : (
-            <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
+            <Menu
+              className={
+                isScrolled ? "text-foreground" : "text-primary-foreground"
+              }
+              size={24}
+            />
           )}
         </button>
       </div>
 
       {isMobileMenuOpen && (
-        <div id="mobile-main-menu" className="md:hidden bg-background shadow-lg">
+        <div
+          id="mobile-main-menu"
+          className="md:hidden bg-background shadow-lg"
+        >
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

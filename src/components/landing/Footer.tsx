@@ -20,24 +20,24 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-primary text-primary-foreground py-12 sm:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div className="text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-10 md:items-center">
+          <div className="flex flex-col items-center md:items-start gap-4">
             <img
               src={logoWatermark}
               alt="Balata Advogados"
-              className="h-16 mx-auto md:mx-0 mb-4 opacity-80"
+              className="h-20 sm:h-24 md:h-28 opacity-80"
             />
-            <p className="text-primary-foreground/70 text-sm">
+            <p className="text-primary-foreground/70 text-sm leading-relaxed text-center md:text-left max-w-xs">
               Advocacia especializada com compromisso, ética e excelência no
               atendimento aos nossos clientes.
             </p>
           </div>
 
-          <div className="text-center">
-            <h4 className="font-semibold text-lg mb-4">Links Rápidos</h4>
-            <nav className="flex flex-col gap-2">
+          <div className="flex flex-col items-center gap-4">
+            <h4 className="font-semibold text-lg">Links Rápidos</h4>
+            <nav className="flex flex-col items-center gap-2">
               {quickLinks.map((link) => (
                 <a
                   key={link.href}
@@ -50,9 +50,9 @@ const Footer = () => {
             </nav>
           </div>
 
-          <div className="text-center md:text-right">
-            <h4 className="font-semibold text-lg mb-4">Redes Sociais</h4>
-            <div className="flex gap-4 justify-center md:justify-end">
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <h4 className="font-semibold text-lg">Redes Sociais</h4>
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -70,8 +70,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>© {currentYear} Balata Advogados. Todos os direitos reservados.</p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-primary-foreground/60 text-center">
+            <p>
+              © {currentYear} Balata Advogados. Todos os direitos reservados.
+            </p>
             <p>{OAB}</p>
           </div>
         </div>
@@ -81,4 +83,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
