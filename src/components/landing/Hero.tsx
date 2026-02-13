@@ -33,8 +33,9 @@ const Hero = () => {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 text-primary-foreground/90 max-w-2xl mx-auto font-light px-2">
-            Atuação em todas as fases do processo criminal. Defesa técnica em crimes de
-            violência doméstica, tráfico, roubo, crimes cibernéticos e eleitorais.
+            Atuação em todas as fases do processo criminal. Defesa técnica em
+            crimes de violência doméstica, tráfico, roubo, crimes cibernéticos e
+            eleitorais.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
@@ -69,12 +70,6 @@ const Hero = () => {
                 {PHONE_DISPLAY}
               </a>
             </Button>
-          </div>
-        </div>
-
-        <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-primary-foreground/50 rounded-full mt-1.5 sm:mt-2" />
           </div>
         </div>
       </div>
